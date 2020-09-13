@@ -1,5 +1,6 @@
-# Infrastructure Automation
-The directories here specify desired infrastructure state in digital ocean.
+# K8s Infrastructure
+See [the infra-modules repo](https://github.com/glynnk/infra-modules) for information on what's going on here.
+
 
 ## Running
 ### Terraform
@@ -18,28 +19,25 @@ access the digitalocean resources for your account and set up remote state for
 terraform.
 
 ### Directory
-Each directory containing `*.tf` files is a separate terraform project. All projects
-rely on the project in the `base` directory to be up-to-date. Each of the following
-commands must be run with one of these directories as the working directory.
-
+Ensure that the 'main' infrastructre' is provisioned before provisioning the
+'dev' infrastructure. Issue the following commands from either directory.
+ 
 #### init
 ```Bash
     <dir> $ terraform init -backend-config="access_key=$SPACES_ACCESS_TOKEN" -backend-config="secret_key=$SPACES_SECRET_KEY"
 ```
-This creates the basis for all other environments, since all other environment
-will use the same container registry, domain and a shared spaces bucket.
 
-#### plan
+#### plan - see what infrastructure would be provisioned on digitlocean.com if you *apply*
 ```Bash
     <dir> $ terraform plan
 ```
 
-#### apply
+#### apply - apply changes to digitalocean.com
 ```Bash
     <dir> $ terraform apply -auto-approve
 ```
 
-#### destroy
+#### destroy - tear down the provisioned infrastructure on digitalocean.com
 ```Bash
     <dir> $ terraform destroy -auto-approve
 ```

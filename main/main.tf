@@ -15,7 +15,7 @@ terraform {
 
 # main infra (corss-environment infra)
 module "base" {
-  source = "github.com/glynnk/infra-modules//root?ref=1.0.8"
+  source = "github.com/glynnk/infra-modules//root?ref=1.1.0"
   root   = {
     name    = "base"
     domain  = "glynnk.com"

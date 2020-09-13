@@ -4,7 +4,7 @@ variable "do_access_token" {}
 
 # provision the dev environment
 module "dev" {
-  source      = "github.com/glynnk/infra-modules//environment?ref=1.0.12"
+  source      = "github.com/glynnk/infra-modules//environment?ref=1.1.0"
   environment = {
     name    = "dev"
     region  = "ams3"
