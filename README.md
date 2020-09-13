@@ -11,6 +11,7 @@ The following environment variables are required to be exported:
   - `DIGITALOCEAN_ACCESS_TOKEN`
   - `SPACES_ACCESS_KEY_ID`
   - `SPACES_SECRET_ACCESS_KEY`
+  - `TF_VAR_do_access_token=$DIGITALOCEAN_ACCESS_TOKEN` 
 
 These values can be got from your digitalocean account and are necessary to
 access the digitalocean resources for your account and set up remote state for
@@ -35,6 +36,10 @@ will use the same container registry, domain and a shared spaces bucket.
 
 #### apply
 ```Bash
-terraform apply -auto-approve
+    <dir> $ terraform apply -auto-approve
 ```
 
+#### destroy
+```Bash
+    <dir> $ terraform destroy -auto-approve
+```
